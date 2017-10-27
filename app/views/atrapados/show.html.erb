@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pokemons:</strong>
+  <%= @atrapado.pokemons %>
+</p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @atrapado.users %>
+</p>
+
+<p>
+  <strong>Poke level:</strong>
+  <%= @atrapado.poke_level %>
+</p>
+
+<%= link_to 'Edit', edit_atrapado_path(@atrapado) %> |
+<%= link_to 'Back', atrapados_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: atrapado, local: true) do |form| %>
+  <% if atrapado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(atrapado.errors.count, "error") %> prohibited this atrapado from being saved:</h2>
+
+      <ul>
+      <% atrapado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pokemons_id %>
+    <%= form.text_field :pokemons_id, id: :atrapado_pokemons_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :users_id %>
+    <%= form.text_field :users_id, id: :atrapado_users_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poke_level %>
+    <%= form.number_field :poke_level, id: :atrapado_poke_level %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

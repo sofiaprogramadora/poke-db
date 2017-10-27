@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Atrapados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pokemons</th>
+      <th>Users</th>
+      <th>Poke level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atrapados.each do |atrapado| %>
+      <tr>
+        <td><%= atrapado.pokemons %></td>
+        <td><%= atrapado.users %></td>
+        <td><%= atrapado.poke_level %></td>
+        <td><%= link_to 'Show', atrapado %></td>
+        <td><%= link_to 'Edit', edit_atrapado_path(atrapado) %></td>
+        <td><%= link_to 'Destroy', atrapado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atrapado', new_atrapado_path %>

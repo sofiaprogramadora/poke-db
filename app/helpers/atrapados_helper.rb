@@ -1,0 +1,2 @@
+module AtrapadosHelper
+end
