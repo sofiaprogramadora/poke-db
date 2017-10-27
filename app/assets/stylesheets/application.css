@@ -19,6 +19,6 @@ body{
 	background-size: 100%;
 }
 
-.field input{
-	border-radius: 60%;
+nav{
+	border-radius: 0;
 }
