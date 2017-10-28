@@ -1,0 +1,36 @@
+<%= form_with(model: catched, local: true) do |form| %>
+  <% if catched.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(catched.errors.count, "error") %> prohibited this catched from being saved:</h2>
+
+      <ul>
+      <% catched.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pokemon_id %>
+    <%= form.collection_select :pokemon_id, Pokemon.order(:nombre),:id,:nombre, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poke_level %>
+    <%= form.number_field :poke_level, id: :catched_poke_level %>
+  </div>
+
+  <div class="field">
+      <%= form.label :imagen %>
+      <%= form.file_field :imagen %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

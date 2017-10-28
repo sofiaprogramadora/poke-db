@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :atrapados
+  resources :catched do
+  	get :upgrade
+  end
   devise_for :users, controllers: {
   	sessions: 'users/sessions'
   }

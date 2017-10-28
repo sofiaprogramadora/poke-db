@@ -1,0 +1,5 @@
+<% @catched = Catched.find(params[:catched_id]) %>
+
+<%= @catched.poke_level %>
+<%= @catched.poke_level += 1 %>
+<%= params %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pokemon:</strong>
+  <%= @catched.pokemon %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @catched.user %>
+</p>
+
+<p>
+  <strong>Poke level:</strong>
+  <%= @catched.poke_level %>
+</p>
+
+<%= link_to 'Edit', edit_catched_path(@catched) %> |
+<%= link_to 'Back', catched_index_path %>

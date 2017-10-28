@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AtrapadoTest < ActiveSupport::TestCase
+class CatchedTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

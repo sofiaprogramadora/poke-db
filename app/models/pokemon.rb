@@ -1,4 +1,4 @@
 class Pokemon < ApplicationRecord
-	has_many :atrapados
-	has_many :user, through: :atrapados
+	has_many :catched
+	has_many :users, through: :catched
 end

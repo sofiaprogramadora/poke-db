@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Pokemons</h1>
+
+<div class="col-md-6">
+  <table>
+    <thead>
+      <tr>
+        <th>Pokemon</th>
+        <th>Poke level</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <% @catched.each do |catched| %>
+        <% if catched.user == current_user %>
+          <tr>
+            <td><%= catched.pokemon.nombre %></td>
+            <td>&nbsp;&nbsp;<%= catched.poke_level %></td>
+            <td><%= link_to 'Show', catched %>&nbsp;|&nbsp;</td>
+            <td><%= link_to 'Edit', edit_catched_path(catched) %>&nbsp;|&nbsp;</td>
+            <td><%= link_to 'Destroy', catched, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;|&nbsp;</td>
+            <td><%= link_to("Lv  Up", "url") %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<%= link_to 'Catch!', new_catched_path %>
+
+<br>
+
+</div>

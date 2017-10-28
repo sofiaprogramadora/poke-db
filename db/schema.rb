@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027150900) do
+ActiveRecord::Schema.define(version: 20171027201528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,26 @@ ActiveRecord::Schema.define(version: 20171027150900) do
     t.datetime "updated_at", null: false
     t.index ["pokemons_id"], name: "index_atrapados_on_pokemons_id"
     t.index ["users_id"], name: "index_atrapados_on_users_id"
+  end
+
+  create_table "catched", force: :cascade do |t|
+    t.bigint "pokemon_id"
+    t.bigint "user_id"
+    t.integer "poke_level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pokemon_id"], name: "index_catched_on_pokemon_id"
+    t.index ["user_id"], name: "index_catched_on_user_id"
+  end
+
+  create_table "catcheds", force: :cascade do |t|
+    t.bigint "pokemon_id"
+    t.bigint "user_id"
+    t.integer "poke_level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pokemon_id"], name: "index_catcheds_on_pokemon_id"
+    t.index ["user_id"], name: "index_catcheds_on_user_id"
   end
 
   create_table "pokemons", force: :cascade do |t|
@@ -54,4 +74,8 @@ ActiveRecord::Schema.define(version: 20171027150900) do
 
   add_foreign_key "atrapados", "pokemons", column: "pokemons_id"
   add_foreign_key "atrapados", "users", column: "users_id"
+  add_foreign_key "catched", "pokemons"
+  add_foreign_key "catched", "users"
+  add_foreign_key "catcheds", "pokemons"
+  add_foreign_key "catcheds", "users"
 end

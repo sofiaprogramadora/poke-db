@@ -6,8 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 
+gem "binding_of_caller"
 gem 'railroady'
 gem 'jquery-rails'
+gem 'better_errors'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
