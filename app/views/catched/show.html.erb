@@ -2,12 +2,12 @@
 
 <p>
   <strong>Pokemon:</strong>
-  <%= @catched.pokemon %>
+  <%= @catched.pokemon.nombre %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @catched.user %>
+  <%= @catched.user.name %>
 </p>
 
 <p>
@@ -17,3 +17,5 @@
 
 <%= link_to 'Edit', edit_catched_path(@catched) %> |
 <%= link_to 'Back', catched_index_path %>
+
+<%= params %>

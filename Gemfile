@@ -5,7 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+gem 'toastr-rails'
+gem 'cancancan'
 gem "binding_of_caller"
 gem 'railroady'
 gem 'jquery-rails'

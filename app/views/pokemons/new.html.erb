@@ -1,5 +1,9 @@
+<% if current_user != nil && current_user.superadmin_role?  %>
 <h1>New Pokemon</h1>
 
 <%= render 'form', pokemon: @pokemon %>
 
 <%= link_to 'Back', pokemons_path %>
+<% else %>
+<h1>You don't have permission to be here!</h1>
+<% end %>
